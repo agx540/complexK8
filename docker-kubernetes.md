@@ -48,5 +48,3 @@ when a container is started.
 **Control Groups** limit amount of resources used per process.
 
 ### How it runs on your local Windows or MacOS Machine
-
-
