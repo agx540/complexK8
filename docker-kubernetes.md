@@ -48,3 +48,41 @@ when a container is started.
 **Control Groups** limit amount of resources used per process.
 
 ### How it runs on your local Windows or MacOS Machine
+
+![Docker on desktop OS](img/2020-02-28-08-47-30.png)
+
+Docker run = docker create + docker start
+
+Docker create:
+
+Take the filesystem from an image and use it in an harddrive segment on the host.
+
+Docker Start:
+
+Runs start command of container.
+
+## Docker Client command line commands
+
+get docker version
+> docker version
+
+Start image with default start command
+> docker run <image name>
+
+Start image with overrode start command
+> docker run <image name> <some command>
+
+List running containers
+> docker ps
+
+List all container ever created
+> docker ps --all
+
+Create a container from an image and returns a container id
+> docker create <image name>
+
+Start container
+> docker run <container id>
+
+Start container and forward container output to current console
+> docker run -a <container id>
