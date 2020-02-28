@@ -61,6 +61,12 @@ Docker Start:
 
 Runs start command of container.
 
+### How you can communicate with a running processs in a container
+
+![](2020-02-28-16-10-19.png)
+
+use -it on command allows you to connect to STDIN on running processes in a container and pretty up output.
+
 ## Docker Client command line commands
 
 get docker version
@@ -81,8 +87,41 @@ List all container ever created
 Create a container from an image and returns a container id
 > docker create <image name>
 
+Create a container from an image, overrides default command and returns a container id
+> docker create <image name> <command>
+
 Start container
 > docker run <container id>
 
 Start container and forward container output to current console
 > docker run -a <container id>
+
+Clear docker. Removes images, containers, networks or build cache
+> docker system prune
+
+Get logs from a container
+> docker logs <container id>
+
+Stop container.  Sends a SIGTERM to a container and give them some time to clean up.
+> docker stop <container id>
+
+Stops container immediately. It sends SIGKILL to container.
+> docker kill <container id>
+
+Remove container
+> docker rm <container id>
+
+Execute a command in a running container. -it means connect to STDIN.
+>docker exec -it <container id> <command>
+
+Get access to command line from a container
+>docker exec -it <container id> sh
+
+## Linux command line
+
+exit command line (like ctrl + c)
+> ctrl + d
+
+List directory
+> ls
+
