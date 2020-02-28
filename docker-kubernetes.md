@@ -34,7 +34,7 @@ Docker Ecosystem:
 
 ![little docker run workflow](img\2020-02-28-07-42-27.png)
 
-### What is a container
+### Container vs Image
 
 A container is a running image in Docker Server. Container in Docker Server
 are seperated through Namespaces and Control Groups.
@@ -47,6 +47,6 @@ when a container is started.
 
 **Control Groups** limit amount of resources used per process.
 
-![](img\2020-02-28-07-47-14.png)
+### How it runs on your local Windows or MacOS Machine
 
-![](img\2020-02-28-07-51-17.png)
+
