@@ -67,16 +67,28 @@ Runs start command of container.
 
 use -it on command allows you to connect to STDIN on running processes in a container and pretty up output.
 
+## Docker File
+
+### 
+
+1 
+
+### Workflow
+
+1. Specify baseimage
+2. Run some commands to installer additional programs
+3. Specify a command to run on container setup
+
 ## Docker Client command line commands
 
 get docker version
 > docker version
 
 Start image with default start command
-> docker run <image name>
+> docker run \<image name\>
 
 Start image with overrode start command
-> docker run <image name> <some command>
+> docker run \<image name\> \<some command\>
 
 List running containers
 > docker ps
@@ -85,37 +97,40 @@ List all container ever created
 > docker ps --all
 
 Create a container from an image and returns a container id
-> docker create <image name>
+> docker create \<image name\>
 
 Create a container from an image, overrides default command and returns a container id
-> docker create <image name> <command>
+> docker create \<image name\> \<command\>
 
 Start container
-> docker run <container id>
+> docker run \<container id\>
 
 Start container and forward container output to current console
-> docker run -a <container id>
+> docker start -a \<container id\>
+
+Startup a container and attach a shell after startup.
+> docker run -it \<image name\> sh
 
 Clear docker. Removes images, containers, networks or build cache
 > docker system prune
 
 Get logs from a container
-> docker logs <container id>
+> docker logs \<container id\>
 
 Stop container.  Sends a SIGTERM to a container and give them some time to clean up.
-> docker stop <container id>
+> docker stop \<container id\>
 
 Stops container immediately. It sends SIGKILL to container.
-> docker kill <container id>
+> docker kill \<container id\>
 
 Remove container
-> docker rm <container id>
+> docker rm \<container id\>
 
 Execute a command in a running container. -it means connect to STDIN.
->docker exec -it <container id> <command>
+>docker exec -it \<container id\> \<command\>
 
 Get access to command line from a container
->docker exec -it <container id> sh
+>docker exec -it \<container id\> sh
 
 ## Linux command line
 
@@ -125,3 +140,5 @@ exit command line (like ctrl + c)
 List directory
 > ls
 
+Create a new file
+> touch \<filename\>
