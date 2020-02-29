@@ -67,13 +67,25 @@ Runs start command of container.
 
 use -it on command allows you to connect to STDIN on running processes in a container and pretty up output.
 
-## Docker File
+## Dockerfile
 
-### 
+Configuration to define how our container should behave.
 
-1 
+### Commands for a Dockerfile
 
-### Workflow
+Base syntax
+> \<Instruction\> \<argument to the instruction\>
+
+Specify base image
+> FROM \<Base image name\>
+
+Prepare custom image
+> RUN \<some instructions\>
+
+Setup start command for container
+> CMD ["\<start command\>"]
+
+### Workflow to create a Dockerfile
 
 1. Specify baseimage
 2. Run some commands to installer additional programs
