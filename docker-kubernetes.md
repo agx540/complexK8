@@ -91,6 +91,9 @@ Setup start command for container
 2. Run some commands to installer additional programs
 3. Specify a command to run on container setup
 
+Compared to installing a Chrome on an empty computer.
+![Install Chrome on an empty computer](img/2020-02-29-14-46-38.png)
+
 ## Docker Client command line commands
 
 get docker version
