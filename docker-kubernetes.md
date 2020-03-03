@@ -176,6 +176,11 @@ Execute a command in a running container. -it means connect to STDIN.
 Get access to command line from a container
 > docker exec -it \<container id\> sh
 
+### Interact with docker runtime
+
+Connect to docker server shell. (MobyLinuxVM)
+> docker run --net=host --ipc=host --uts=host --pid=host -it --security-opt=seccomp=unconfined --privileged --rm alpine /bin/sh
+
 ## Linux command line
 
 exit command line (like ctrl + c)
@@ -193,3 +198,5 @@ Create a node.js web application. Run it in a container and
 access it from browser in hosting environment.
 
 ![steps to create sample project](img/2020-03-02-09-40-16.png)
+
+### 
