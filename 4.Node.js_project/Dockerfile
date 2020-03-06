@@ -1,9 +1,14 @@
 # Specify a base image
 FROM node:alpine
 
+# Set working directory
+# It's for building image and if you run the container
+WORKDIR /usr/app
+
 # Install some dependencies
-COPY ./ ./
+COPY ./package.json ./
 RUN npm install
+COPY ./ ./
 
 # Default command
 CMD [ "npm", "start" ]

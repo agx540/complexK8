@@ -90,6 +90,9 @@ Base syntax
 Specify base image
 > FROM \<Base image name\>
 
+Set a working directory for building the image and for running the container.
+> WORKDIR /usr/app
+
 Prepare custom image
 > RUN \<some instructions\>
 
@@ -143,6 +146,9 @@ Create a container from an image, overrides default command and returns a contai
 
 Start container
 > docker run \<container id\>
+
+Start container an forward network traffic from localmachine port to container port
+> docker run -p \<localmachine port\>:\< container port\> \<container id\>
 
 Start container and forward container output to current console
 > docker start -a \<container id\>
