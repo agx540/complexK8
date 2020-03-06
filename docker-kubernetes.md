@@ -197,6 +197,8 @@ Create a new file
 Create a node.js web application. Run it in a container and
 access it from browser in hosting environment.
 
+see .\4.Node.js_project folder for project source code
+
 ![steps to create sample project](img/2020-03-02-09-40-16.png)
 
 ### 
