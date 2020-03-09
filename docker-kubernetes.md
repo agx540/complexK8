@@ -112,36 +112,6 @@ Setup start command for container
 Compared to installing a Chrome on an empty computer.
 ![Install Chrome on an empty computer](img/2020-02-29-14-46-38.png)
 
-## Docker Compose
-
-- Seperate CLI that gets installed along with Docker.
-- Used to start up multiple Docker containers at the same time.
-- Automates some of the long-winded arguments we were passing to 'docker run'
-
-### docker-compose.yml
-
-Run docker-compose.yml file
-> docker-compose up
-
-Run docker-compose.yml file in background
-> docker-compose up -d
-
-Run docker-compose.yml file and rebuild containers
-> docker-compose up --build
-
-Stop container started with docker-compose
-> docker-compose down
-
-Get status of running container belong to docker-compose.yml file in same directory.
-> docker-compose ps
-
-### Restart policies
-
-Exit code 0 means no error.
-Exit code > 0 means error.
-
-![Restart policies](2020-03-09-11-33-22.png)
-
 ## Docker Client command line commands
 
 ### Base
@@ -226,6 +196,50 @@ Get access to command line from a container
 
 Connect to docker server shell. (MobyLinuxVM)
 > docker run --net=host --ipc=host --uts=host --pid=host -it --security-opt=seccomp=unconfined --privileged --rm alpine /bin/sh
+
+
+## Docker Compose
+
+- Seperate CLI that gets installed along with Docker.
+- Used to start up multiple Docker containers at the same time.
+- Automates some of the long-winded arguments we were passing to 'docker run'
+
+### docker-compose.yml
+
+Run docker-compose.yml file
+> docker-compose up
+
+Run docker-compose.yml file in background
+> docker-compose up -d
+
+Run docker-compose.yml file and rebuild containers
+> docker-compose up --build
+
+Stop container started with docker-compose
+> docker-compose down
+
+Get status of running container belong to docker-compose.yml file in same directory.
+> docker-compose ps
+
+### Restart policies
+
+Exit code 0 means no error.
+Exit code > 0 means error.
+
+![Restart policies](img/2020-03-09-11-33-22.png)
+
+## Volumes
+
+Map local current directory into /app folder of container. Exclude node_modules folder.
+> docker run -it -p 3000:3000 -v /app/node_modules -v ${pwd}:/app ac4
+
+
+![](img/2020-03-09-15-07-06.png)
+
+### Commands
+
+Run pwd in your command to get present working directory.
+> pwd
 
 ## Create development workflow
 
