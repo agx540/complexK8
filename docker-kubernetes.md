@@ -142,11 +142,6 @@ Exit code > 0 means error.
 
 ![Restart policies](2020-03-09-11-33-22.png)
 
-
-
-
-
-
 ## Docker Client command line commands
 
 ### Base
@@ -161,6 +156,9 @@ Clear docker. Removes images, containers, networks or build cache
 
 Build an image from a dockerfile in current directory
 > docker build .
+
+Build an image from a dockerfile in current directory
+> docker build -f \<docker file name\> .
 
 Build an image from a dockerfile and tag. Tag is version
 > docker build -t \<docker id\>/\<repo/project name\>:\<Version\> \<buildcontext\>
