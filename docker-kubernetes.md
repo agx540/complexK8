@@ -229,6 +229,15 @@ Get access to command line from a container
 Connect to docker server shell. (MobyLinuxVM)
 > docker run --net=host --ipc=host --uts=host --pid=host -it --security-opt=seccomp=unconfined --privileged --rm alpine /bin/sh
 
+## Create development workflow
+
+1. Develop
+2. Test
+3. Deploy
+4. Start with 1. again
+
+![DevOps Workflow](img/2020-03-09-13-11-56.png)
+
 ## Linux Directory Structure
 
 ![Linux directory structure](img/2020-03-09-08-39-59.png)
