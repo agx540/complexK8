@@ -4,6 +4,10 @@ This course in on Udemy.com.
 
 <https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide>
 
+How to open diagrams in draw.io. Example for chapter 3.
+<https://www.draw.io/?mode=github#HStephenGrider%2FDockerCasts%2Fmaster%2Fdiagrams%2F01%2Fdiagrams.xml>
+<https://www.draw.io/?mode=github#HStephenGrider%2FDockerCasts%2Fmaster%2Fdiagrams%2F03%2Fdiagrams.xml>
+<https://www.draw.io/?mode=github#HStephenGrider%2FDockerCasts%2Fmaster%2Fdiagrams%2F07%2Fdiagrams.xml>
 ## Course Information
 
 - Capital 3 - Video 35
@@ -119,9 +123,24 @@ Compared to installing a Chrome on an empty computer.
 Run docker-compose.yml file
 > docker-compose up
 
+Run docker-compose.yml file in background
+> docker-compose up -d
+
 Run docker-compose.yml file and rebuild containers
 > docker-compose up --build
 
+Stop container started with docker-compose
+> docker-compose down
+
+Get status of running container belong to docker-compose.yml file in same directory.
+> docker-compose ps
+
+### Restart policies
+
+Exit code 0 means no error.
+Exit code > 0 means error.
+
+![Restart policies](2020-03-09-11-33-22.png)
 
 
 
@@ -157,6 +176,9 @@ Start image with default start command
 
 Start image and override start command
 > docker run \<image name\> \<some command\>
+
+Start image in background and print container id
+> docker run -d \<image name\>
 
 Create a container from an image and returns a container id
 > docker create \<image name\>
