@@ -230,9 +230,8 @@ Exit code > 0 means error.
 
 ## Volumes
 
-Map local current directory into /app folder of container. Exclude node_modules folder.
+Map local current directory into /app folder of container. Exclude node_modules folder from container, this means don't override folder in container by mapping volume into container.
 > docker run -it -p 3000:3000 -v /app/node_modules -v ${pwd}:/app ac4
-
 
 ![](img/2020-03-09-15-07-06.png)
 
