@@ -108,6 +108,14 @@ Setup start command for container
 Compared to installing a Chrome on an empty computer.
 ![Install Chrome on an empty computer](img/2020-02-29-14-46-38.png)
 
+## Docker Compose
+
+- Seperate CLI that gets installed along with Docker.
+- Used to start up multiple Docker containers at the same time.
+- Automates some of the long-winded arguments we were passing to 'docker run'
+
+### docker-compose.yml.
+
 ## Docker Client command line commands
 
 ### Base
