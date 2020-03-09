@@ -114,7 +114,19 @@ Compared to installing a Chrome on an empty computer.
 - Used to start up multiple Docker containers at the same time.
 - Automates some of the long-winded arguments we were passing to 'docker run'
 
-### docker-compose.yml.
+### docker-compose.yml
+
+Run docker-compose.yml file
+> docker-compose up
+
+Run docker-compose.yml file and rebuild containers
+> docker-compose up --build
+
+
+
+
+
+
 
 ## Docker Client command line commands
 
