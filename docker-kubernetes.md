@@ -204,7 +204,7 @@ Connect to docker server shell. (MobyLinuxVM)
 - Used to start up multiple Docker containers at the same time.
 - Automates some of the long-winded arguments we were passing to 'docker run'
 
-### docker-compose.yml
+### docker-compose cli
 
 Run docker-compose.yml file
 > docker-compose up
@@ -221,14 +221,28 @@ Stop container started with docker-compose
 Get status of running container belong to docker-compose.yml file in same directory.
 > docker-compose ps
 
-### Restart policies
+### docker-compose.yml File language
+
+- Use spaces after -
+- Take care of indention
+
+#### Volumes (docker-compose)
+
+    volumes:
+      - /app/node_modules
+      - .:/app
+
+- Don't override /app/node_modules in container after mapping some volumes.
+- Map current directory . to /app in container.
+
+#### Restart policies
 
 Exit code 0 means no error.
 Exit code > 0 means error.
 
 ![Restart policies](img/2020-03-09-11-33-22.png)
 
-## Volumes
+## Volumes (docker cli)
 
 Map local current directory into /app folder of container. Exclude node_modules folder from container, this means don't override folder in container by mapping volume into container.
 > docker run -it -p 3000:3000 -v /app/node_modules -v ${pwd}:/app ac4

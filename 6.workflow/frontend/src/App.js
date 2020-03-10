@@ -19,7 +19,7 @@ function App() {
           Learn React.
         </a>
         <div>
-          <p>Alex!!! sevensds!!!</p>
+          <p>Alex!!! sevens!!!</p>
         </div>
       </header>
     </div>
