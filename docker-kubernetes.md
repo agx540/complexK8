@@ -299,7 +299,7 @@ But there is always a little problem to test a engine which needs some manual co
 1. Go to travis-ci.com
 2. login with your github account
 3. Allow travis-ci to connect to your github repositories
-4.
+4. Create at trigger to build after 
 
 ### Setup 
 
