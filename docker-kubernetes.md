@@ -284,6 +284,25 @@ But there is always a little problem to test a engine which needs some manual co
 
 ![multistep build](img/2020-03-10-11-25-21.png)
 
+## Continous Integration and Deployment with AWS
+
+![CI and deployment workflow](2020-03-10-13-20-12.png)
+
+### Bring code online into GITHUB
+
+1. Create online github repository
+2. Create local git repo
+![create local repo and connect to remote](img/2020-03-10-13-18-17.png)
+
+### Setup Travis CI
+
+1. Go to travis-ci.com
+2. login with your github account
+3. Allow travis-ci to connect to your github repositories
+4.
+
+### Setup 
+
 ## Linux Directory Structure
 
 ![Linux directory structure](img/2020-03-09-08-39-59.png)
