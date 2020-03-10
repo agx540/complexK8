@@ -192,11 +192,15 @@ Execute a command in a running container. -it means connect to STDIN.
 Get access to command line from a container
 > docker exec -it \<container id\> sh
 
+Attach to STDIN of a running container
+> docker attach  \<container id\>
+
+    Note: The attach command will display the output of the ENTRYPOINT/CMD process. This can appear as if the attach command is hung when in fact the process may simply not be interacting with the terminal at that time.
+
 ### Interact with docker runtime
 
 Connect to docker server shell. (MobyLinuxVM)
 > docker run --net=host --ipc=host --uts=host --pid=host -it --security-opt=seccomp=unconfined --privileged --rm alpine /bin/sh
-
 
 ## Docker Compose
 
@@ -262,6 +266,23 @@ Run pwd in your command to get present working directory.
 4. Start with 1. again
 
 ![DevOps Workflow](img/2020-03-09-13-11-56.png)
+
+### Development Environment
+
+### Test Environment
+
+There are different approaches to start test environment.
+
+1. Connect to dev container and execute tests
+2. Create a second container in docker-compose and execute tests
+
+But there is always a little problem to test a engine which needs some manual command line input, like in react.
+
+### Production Environment
+
+#### Multistep Build
+
+![multistep build](img/2020-03-10-11-25-21.png)
 
 ## Linux Directory Structure
 
@@ -346,7 +367,6 @@ Linux is a complex system which requires a more complex and efficient way to sta
 - /var/log/messages : log of messages produced by syslog daemon at boot.
 - /var/log/wtmp : list login time and duration of each user on the system currently.
 
-
 ## Linux command line
 
 exit command line (like ctrl + c)
@@ -354,6 +374,9 @@ exit command line (like ctrl + c)
 
 List directory
 > ls
+
+List current running processes (ps = process status)
+> ps
 
 Create a new file
 > touch \<filename\>
