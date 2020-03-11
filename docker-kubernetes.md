@@ -334,7 +334,29 @@ can scale up if traffic goes up.
 4. git commit -m "\<some commit information\>"
 5. git push origin <\branchname>\
 
-## MULTI CONTAINER
+## MULTI CONTAINER HANDLING
+
+1. Boot up browser
+2. visit website
+3. nginx webserver do some routing either to show some website (React) or call some api(Express)
+4. React is serving the website
+5. Express Server is hosting the api
+6. Redis is an inmemory memory store
+7. Postgres is a database
+
+![system overview](img/2020-03-11-11-12-46.png)
+
+System flow to submit a request for a calculation.
+![](img/2020-03-11-13-03-36.png)
+
+Two pages will be needed for GUI.
+![websites needs to be created](img/2020-03-11-13-16-20.png)
+
+left one is coded in Fib.js.
+Right one is coded in OtherPage.js
+
+### Setup containers for development
+
 
 ## Linux Directory Structure
 
