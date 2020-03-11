@@ -357,6 +357,9 @@ Right one is coded in OtherPage.js
 
 ### Setup containers for development
 
+### Setup docker-compose
+
+![docker-compose setup](img/2020-03-11-14-28-05.png)
 
 ## Linux Directory Structure
 
