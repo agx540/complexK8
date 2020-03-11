@@ -286,7 +286,18 @@ But there is always a little problem to test a engine which needs some manual co
 
 ## Continous Integration and Deployment with AWS
 
-![CI and deployment workflow](2020-03-10-13-20-12.png)
+1. write some code
+2. push it to github
+3. Travis-ci gets triggered by code changes
+4. downloads current sources
+5. runs .travis.yml
+6. build Dockerfile.dev
+7. Create a container from 6. and executes tests
+8. Deploy it to AWS Elastic Beanstalk
+9. Builds new image from Dockerfile
+10. Executes
+
+![CI and deployment workflow](img/2020-03-10-13-20-12.png)
 
 ### Bring code online into GITHUB
 
@@ -299,9 +310,20 @@ But there is always a little problem to test a engine which needs some manual co
 1. Go to travis-ci.com
 2. login with your github account
 3. Allow travis-ci to connect to your github repositories
-4. Create at trigger to build after 
+4. Create at trigger to build after
 
-### Setup 
+### Setup Elastic Beanstalk (=AWS : Docker)
+
+Elastic Beanstalk lets you setup an application of one container. It's also
+can scale up if traffic goes up.
+
+1. Create an Elastic Beanstalk application
+2. Choose Docker as runtime
+3. Create IAM (Identity and Access Management) account for Travis to access beanstalk
+4. Copy "Access Key" and "Secret Key" to Travis.ci docker-react project into "Environment Variables". Do not store this into source code.
+5. Create deploy configuration in .travis.yml file for aws
+
+![Elastic Beanstalk Overview](2020-03-11-09-35-47.png)
 
 ## Linux Directory Structure
 
