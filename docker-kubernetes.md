@@ -284,7 +284,7 @@ But there is always a little problem to test a engine which needs some manual co
 
 ![multistep build](img/2020-03-10-11-25-21.png)
 
-## Continous Integration and Deployment with AWS
+## Continous Integration and Deployment with AWS and SINGLE CONTAINER
 
 1. write some code
 2. push it to github
@@ -303,6 +303,7 @@ But there is always a little problem to test a engine which needs some manual co
 
 1. Create online github repository
 2. Create local git repo
+
 ![create local repo and connect to remote](img/2020-03-10-13-18-17.png)
 
 ### Setup Travis CI
@@ -323,7 +324,17 @@ can scale up if traffic goes up.
 4. Copy "Access Key" and "Secret Key" to Travis.ci docker-react project into "Environment Variables". Do not store this into source code.
 5. Create deploy configuration in .travis.yml file for aws
 
-![Elastic Beanstalk Overview](2020-03-11-09-35-47.png)
+![Elastic Beanstalk Overview](img/2020-03-11-09-35-47.png)
+
+### Work with features branches
+
+1. git checkout -b <\branchname>\
+2. change code
+3. git add .
+4. git commit -m "\<some commit information\>"
+5. git push origin <\branchname>\
+
+## MULTI CONTAINER
 
 ## Linux Directory Structure
 
