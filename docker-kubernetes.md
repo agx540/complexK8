@@ -4,10 +4,18 @@ This course in on Udemy.com.
 
 <https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide>
 
-How to open diagrams in draw.io. Example for chapter 3.
+How to open diagrams in draw.io. Example for chapter 1.
 <https://www.draw.io/?mode=github#HStephenGrider%2FDockerCasts%2Fmaster%2Fdiagrams%2F01%2Fdiagrams.xml>
+
+Chaper 3:\
 <https://www.draw.io/?mode=github#HStephenGrider%2FDockerCasts%2Fmaster%2Fdiagrams%2F03%2Fdiagrams.xml>
+
+Chapter 7:\
 <https://www.draw.io/?mode=github#HStephenGrider%2FDockerCasts%2Fmaster%2Fdiagrams%2F07%2Fdiagrams.xml>
+
+Chapter 8:\
+<https://www.draw.io/?mode=github#HStephenGrider%2FDockerCasts%2Fmaster%2Fdiagrams%2F08%2Fdiagrams.xml>
+
 ## Course Information
 
 - Capital 3 - Video 35
@@ -372,6 +380,19 @@ This variables are created and set when the container is started.
 > variableName
 
 This variables are loaded from your local computer.
+
+#### nginx
+
+The browser calls only one backend and don't know about different services. nginx helps us to route a url to a service which can handle the request.
+This is also a configuration without a port. So a lot easier to handle, because ports can change.
+
+So ngnix watches for incoming request and route them of to the appropriate backend service.
+
+![nginx setup](img/2020-03-11-15-14-40.png)
+
+##### nginx config
+
+![nginx configuration](img/2020-03-11-15-19-33.png)
 
 ## Linux Directory Structure
 
