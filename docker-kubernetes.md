@@ -361,6 +361,18 @@ Right one is coded in OtherPage.js
 
 ![docker-compose setup](img/2020-03-11-14-28-05.png)
 
+#### Enviroment Variables at runtime
+
+![different environment variables](img/2020-03-11-14-45-47.png)
+
+> variableName=value
+
+This variables are created and set when the container is started.
+
+> variableName
+
+This variables are loaded from your local computer.
+
 ## Linux Directory Structure
 
 ![Linux directory structure](img/2020-03-09-08-39-59.png)
