@@ -402,7 +402,6 @@ So ngnix watches for incoming request and route them of to the appropriate backe
 
 ![CI workflow](img/2020-03-12-10-14-25.png)
 
-
 ![production setup](img/2020-03-12-10-28-38.png)
 
 
