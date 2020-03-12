@@ -404,11 +404,52 @@ So ngnix watches for incoming request and route them of to the appropriate backe
 
 ![production setup](img/2020-03-12-10-28-38.png)
 
+### Deploy to AWS Elastic Beanstalk
+
+Dockerrun.aws.json tell Elastic Beanstalk how to setup our Multi-Container Environment.
+
+![difference between docker-compose aws beanstalk](img/2020-03-12-14-10-25.png)
+
+How Elastic Beanstalk handles Docker
+
+![Beanstalk Docker handling](img/2020-03-12-14-13-09.png)
+
+Links allows containers to talk to each other. They are unidirectional. ngnix -> client or nginx -> api (=server)
+
+![Create links](img/2020-03-12-14-49-31.png)
+
+Create a Multi-Container App on AWS.
+
+How system is splitted between stateless services and data storage.
+
+![How system is splitted between stateless services and data storage](img/2020-03-12-15-13-46.png)
+
+![AWS Elastic Cache](img/2020-03-12-15-15-23.png)
+
+![AWS Relational Database Service](img/2020-03-12-15-16-17.png)
+
+VPC: A VPC is a virtual private cloud. It's distinct for each region of AWS.
+
+By default container in you Elastic Beanstalk can not connect AWS Elastic Cache or AWS Relational Database Service. Because they are running in different VPC.
+
+![Container cannot by default talk to redis or postgres services on AWS](img/2020-03-12-15-29-56.png)
+
+![VPC](img/2020-03-12-15-26-57.png)
+
+Security Groups are Firewall rules for your VPC.
+
+![Security Group](img/2020-03-12-15-34-08.png)
 
 
+#### --------------------------------------
 
+#### ---------------------------------------
 
+#### ----------------------------------------
 
+#### -----------------------------------------
+
+#### ------------------------------------------
 
 ## Linux Directory Structure
 
