@@ -237,6 +237,7 @@ Get status of running container belong to docker-compose.yml file in same direct
 
 - Use spaces after -
 - Take care of indention
+- use lower case for key words
 
 #### Volumes (docker-compose)
 
