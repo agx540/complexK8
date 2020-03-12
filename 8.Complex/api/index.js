@@ -37,6 +37,8 @@ const redisClient = redis.createClient({
 });
 const redisPublisher = redisClient.duplicate();
 
+console.log("redis_port: " + keys.redisPort + "  redis_host: " +  keys.redisHost);
+
 // Express route handlers
 
 app.get('/', (req, res) => {
@@ -45,12 +47,14 @@ app.get('/', (req, res) => {
 
 app.get('/values/all', async (req, res) => {
   const values = await pgClient.query('SELECT * from values');
-
+  console.log("get values/all count: " + values.rowCount);
   res.send(values.rows);
 });
 
 app.get('/values/current', async (req, res) => {
+  console.log("get values/current start!! redis connected: " + redisClient.connected);
   redisClient.hgetall('values', (err, values) => {
+    console.log("get values/current values: " + Object.entries(values));
     res.send(values);
   });
 });
@@ -65,6 +69,8 @@ app.post('/values', async (req, res) => {
   redisClient.hset('values', index, 'Nothing yet!');
   redisPublisher.publish('insert', index);
   pgClient.query('INSERT INTO values(number) VALUES($1)', [index]);
+
+  console.log("post values index: " + index);
 
   res.send({ working: true });
 });
