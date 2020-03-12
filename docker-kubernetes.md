@@ -16,6 +16,9 @@ Chapter 7:\
 Chapter 8:\
 <https://www.draw.io/?mode=github#HStephenGrider%2FDockerCasts%2Fmaster%2Fdiagrams%2F08%2Fdiagrams.xml>
 
+Chapter 9:\
+<https://www.draw.io/?mode=github#HStephenGrider%2FDockerCasts%2Fmaster%2Fdiagrams%2F09%2Fdiagrams.xml>
+
 ## Course Information
 
 - Capital 3 - Video 35
@@ -48,7 +51,7 @@ Docker Ecosystem:
 4. If it finds it there the image gets downloaded.
 5. Image gets executed
 
-![little docker run workflow](img\2020-02-28-07-42-27.png)
+![little docker run workflow](img/2020-03-12-10-33-09.png)
 
 ### Container vs Image
 
@@ -86,7 +89,7 @@ Runs start command of container.
 
 ### How you can communicate with a running processs in a container
 
-![](2020-02-28-16-10-19.png)
+![docker container system overview](2020-02-28-16-10-19.png)
 
 use -it on command allows you to connect to STDIN on running processes in a container and pretty up output.
 
@@ -394,6 +397,19 @@ So ngnix watches for incoming request and route them of to the appropriate backe
 ##### nginx config
 
 ![nginx configuration](img/2020-03-11-15-19-33.png)
+
+### CI
+
+![CI workflow](img/2020-03-12-10-14-25.png)
+
+
+![production setup](img/2020-03-12-10-28-38.png)
+
+
+
+
+
+
 
 ## Linux Directory Structure
 
