@@ -480,10 +480,6 @@ Create a new User in AWS  IAM:
 - Access type: pogrammatic access
 - Add all Beanstalk policies
 
-Access key ID: AKIA2RXENFBXE3OUZ4U6
-
-Secrect access key: sepB47M7JNdx3Xeb/KXl1hSvJrAD4P8U3q6pojoq
-
 Add two new Environment Variables on TRAVIS CI
 
 AWS_ACCESS_KEY
