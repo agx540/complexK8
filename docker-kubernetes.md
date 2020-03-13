@@ -440,6 +440,57 @@ Security Groups are Firewall rules for your VPC.
 
 ![Security Group](img/2020-03-12-15-34-08.png)
 
+Create Postgres DB in AWS RDS:
+
+- DB instance identifier: multi-docker-postgres
+- Master username: postgres
+- Master password: postgrespassword
+- Database name: fibvalues
+
+Create Redis in AWS ElastiCache:
+
+- Name: multi-docker-redis
+- Nodetype: cache.t2.micro
+- Port: 6379
+- Subnet name: redis-group
+- Select all subnets
+
+Wire all up with security group:
+
+- Name: multi-docker
+- Select default VPC
+
+Create Inbound rule in VPC
+
+- Port Range: 5432-6379
+
+Add new created VPC to:
+
+- Redis
+- Postgres
+- Elastic Beanstalk
+
+Add Environment Variables to Elastic Beanstalk
+
+![Environment variables for Elastic Beanstalk](img\2020-03-13-08-49-16.png)
+
+Create a new User in AWS  IAM:
+
+- Username: multi-docker-deployer
+- Access type: pogrammatic access
+- Add all Beanstalk policies
+
+Access key ID: AKIA2RXENFBXE3OUZ4U6
+
+Secrect access key: sepB47M7JNdx3Xeb/KXl1hSvJrAD4P8U3q6pojoq
+
+Add two new Environment Variables on TRAVIS CI
+
+AWS_ACCESS_KEY
+AWS_SECRET_KEY
+
+and use values from AWS user above.
+
 
 #### --------------------------------------
 
