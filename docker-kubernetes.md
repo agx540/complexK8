@@ -573,19 +573,32 @@ Difference between Pods and Deployment
 
 ### kubectl
 
+Cheatsheet see here: <https://kubernetes.io/de/docs/reference/kubectl/cheatsheet/>
+
 Change the configuration of your local cluster. You only can do updates to a pod when you change:
     - container image
     - initContainer: image
     - spec.activeDeadlineSeconds
     - spec.tolerations
+> kubectl apply -f \<filename\>
 
-> kubectl apply -f <filename>
+Remove an object
+> kubectl delete -f \<filename\>
+
+Remove a pod
+> kubectl delete pod \<pod name\>
+
+Remove a service
+> kubectl delete service \<service name\>
 
 Get status of pods
 > kubectl get pods
 
 Get status of services
 > kubectl get services
+
+Get current deployments
+> kubectl get deployments
 
 Get detailed info about an object
 > kubectl describe \<objecttype\> \<objectname\>
