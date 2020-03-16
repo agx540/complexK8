@@ -489,6 +489,8 @@ and use values from AWS user above.
 
 ## Kuberenetes
 
+Kubernetes is a system to deploy containerized apps.
+
 ![Kubernetes Overview](img/2020-03-15-14-50-32.png)
 
 ![What and Why Kubernetes](img/2020-03-15-14-51-52.png)
@@ -509,15 +511,16 @@ minikube: User for managing the VM for lokal Kubernetes cluster.
 
 #### Configuration
 
+A configuration is the desired state Kubernetes needs to reach.
+
 apiVersion decides what object you are able to create
-![](img/2020-03-16-09-33-41.png)
+
+![Kubernetes apiVersion](img/2020-03-16-09-33-41.png)
 
 - StatefulSet
 - ReplicaController
 - Pod: A Pod is used to run a container
 - Service: Used to setup some networking in a cluster.
-
-Labels 
 
 #### Pod
 
@@ -532,11 +535,73 @@ Is used to setup some amount of networking in Kubernetes.
 
 ![Kubernetes Services](img/2020-03-16-10-05-01.png)
 
+#### NodePort Service
+
+A NodePort Service is used only for development purpose.
+
+![Kubernetes network setup on a dev machine](img/2020-03-16-10-07-40.png)
+
+- kube-proxy: each node of a Kubernetes cluster has a kube-proxy to route traffic from a node to the outside world.
+- Service NodePort: used to setup network rules for pods, cluster, ...
+
+![Kubernetes selector](img/2020-03-16-10-16-34.png)
+
+Kubernetes uses a "Labels Selector System".
+A selector is used to reference a key value pair in the labels section of config file.
+
+![Kubernetes Port configuration](img/2020-03-16-10-33-06.png)
+
+- port: It's used inside the cluster.
+- targetPort: send all incoming traffic to the pod.dir
+- nodePort: is the port which is used to call the cluster and get forwarded to the pod.
+
+![kubernetes big picture](img/2020-03-16-14-33-44.png)
+
+![Kubernetes big picture description](img/2020-03-16-14-34-42.png)
+
+![Imperative and declarative configuration approach](img/2020-03-16-15-41-26.png)
+
+Kubernetes supports declarative and imperative approach
+
+### kubectl
+
+Change the configuration of your local cluster.
+> kubectl apply -f <filename>
+
+Get status of pods
+> kubectl get pods
+
+Get status of services
+> kubectl get services
+
+Get detailed info about an object
+> kubectl describe \<objecttype\> \<objectname\>
+
+### minikube
+
+Start minikube
+> minikube start --vm-driver hyperv --hyperv-virtual-switch "Minikube Switch"
+
+Get minikube ip (run powershell in admin mode)
+> minikube ip
+
+Open dashboard
+> minikube dashboard
+
 #### ------------------------------------------
+
+#### -------------------------------------------
+
+#### --------------------------------------------
+
+#### ---------------------------------------------
+
+#### ----------------------------------------------
 
 ## Certified Kubernetes Application Developer (CKAD)
 
-Maybe is the linked site useful
+Maybe an useful link.
+
 <https://medium.com/bb-tutorials-and-thoughts/practice-enough-with-these-questions-for-the-ckad-exam-2f42d1228552>
 
 ### Core concepts 13%
