@@ -563,9 +563,22 @@ A selector is used to reference a key value pair in the labels section of config
 
 Kubernetes supports declarative and imperative approach
 
+#### Deployment
+
+Difference between Pods and Deployment
+
+![Difference between Pods and Deployment](img/2020-03-16-16-08-20.png)
+
+![Deployment pod template](img/2020-03-16-16-10-03.png)
+
 ### kubectl
 
-Change the configuration of your local cluster.
+Change the configuration of your local cluster. You only can do updates to a pod when you change:
+    - container image
+    - initContainer: image
+    - spec.activeDeadlineSeconds
+    - spec.tolerations
+
 > kubectl apply -f <filename>
 
 Get status of pods
