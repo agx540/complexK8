@@ -487,16 +487,71 @@ AWS_SECRET_KEY
 
 and use values from AWS user above.
 
+## Kuberenetes
 
-#### --------------------------------------
+![Kubernetes Overview](img/2020-03-15-14-50-32.png)
 
-#### ---------------------------------------
+![What and Why Kubernetes](img/2020-03-15-14-51-52.png)
 
-#### ----------------------------------------
+kubectl: Use for managing containers in the node.
+minikube: User for managing the VM for lokal Kubernetes cluster.
 
-#### -----------------------------------------
+![](2020-03-15-14-56-07.png)
+
+### Transfer Knowledge from docker-compose to Kubernetes
+
+![](img/2020-03-15-15-52-46.png)
+
+- Kubernetes needs startup ready images
+- We need to do a networking manuall
+
+![](img/2020-03-15-15-54-08.png)
+
+#### Configuration
+
+apiVersion decides what object you are able to create
+![](img/2020-03-16-09-33-41.png)
+
+- StatefulSet
+- ReplicaController
+- Pod: A Pod is used to run a container
+- Service: Used to setup some networking in a cluster.
+
+Labels 
+
+#### Pod
+
+Only add containers to the same pod if they are very tightly integrated
+and have a close relationship. Otherwise each container should have a own pod.
+
+![pod with more than one container](img/2020-03-16-09-39-16.png)
+
+#### Service
+
+Is used to setup some amount of networking in Kubernetes.
+
+![Kubernetes Services](img/2020-03-16-10-05-01.png)
 
 #### ------------------------------------------
+
+## Certified Kubernetes Application Developer (CKAD)
+
+Maybe is the linked site useful
+<https://medium.com/bb-tutorials-and-thoughts/practice-enough-with-these-questions-for-the-ckad-exam-2f42d1228552>
+
+### Core concepts 13%
+
+### Configuration 18%
+
+### Multi-Container Pods 10%
+
+### Observability 18%
+
+### Pod Design 20%
+
+### Services & Networking 13%
+
+### State Persistence 8%
 
 ## Linux Directory Structure
 
