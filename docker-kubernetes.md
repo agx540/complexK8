@@ -535,6 +535,8 @@ Is used to setup some amount of networking in Kubernetes.
 
 ![Kubernetes Services](img/2020-03-16-10-05-01.png)
 
+A service sit in front of one to many pods and routes traffic to pods.
+
 #### NodePort Service
 
 A NodePort Service is used only for development purpose.

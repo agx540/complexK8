@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: client-deployment
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       component: web
@@ -14,10 +14,6 @@ spec:
     spec:
       containers:
       - name: client
-        image: alexsnyx/multi-client
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
+        image: alexsnyx/multi-worker
         ports:
         - containerPort: 3000
