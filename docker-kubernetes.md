@@ -533,6 +533,8 @@ apiVersion decides what object you are able to create
 - Pod: A Pod is used to run a container
 - Service: Used to setup some networking in a cluster.
 
+![Kubernetes Object Types](img/2020-03-17-14-00-51.png)
+
 #### Pod
 
 Only add containers to the same pod if they are very tightly integrated
@@ -548,7 +550,7 @@ Is used to setup some amount of networking in Kubernetes.
 
 A service sit in front of one to many pods and routes traffic to pods.
 
-#### NodePort Service
+##### NodePort Service
 
 A NodePort Service is used only for development purpose.
 
@@ -568,10 +570,25 @@ A selector is used to reference a key value pair in the labels section of config
 - targetPort: send all incoming traffic to the pod.dir
 - nodePort: is the port which is used to call the cluster and get forwarded to the pod.
 
-
 ![Imperative and declarative configuration approach](img/2020-03-16-15-41-26.png)
 
 Kubernetes supports declarative and imperative approach
+
+##### Cluster IP
+
+Exposes the Service on a cluster-internal IP. Choosing this value makes the Service only reachable from within the cluster. This is the default ServiceType.
+
+##### LoadBalancer
+
+Exposes the Service externally using a cloud provider’s load balancer. NodePort and ClusterIP Services, to which the external load balancer routes, are automatically created.
+
+##### External Name
+
+Maps the Service to the contents of the externalName field (e.g. foo.bar.example.com), by returning a CNAME record with its value. No proxying of any kind is set up.
+
+##### Ingress
+
+An API object that manages external access to the services in a cluster, typically HTTP. Ingress may provide load balancing, SSL termination and name-based virtual hosting.
 
 #### Deployment
 
@@ -652,7 +669,7 @@ run & minikube -p minikube docker-env | Invoke-Expression
 
 ### Setup complex environment locally
 
-
+![complex setup architecture](img/2020-03-17-13-58-02.png)
 
 ### Certified Kubernetes Application Developer (CKAD)
 
