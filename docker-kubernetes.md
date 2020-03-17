@@ -598,6 +598,10 @@ Difference between Pods and Deployment
 
 ![Deployment pod template](img/2020-03-16-16-10-03.png)
 
+#### Volume
+
+On-disk files in a Container are ephemeral, which presents some problems for non-trivial applications when running in Containers. First, when a Container crashes, kubelet will restart it, but the files will be lost - the Container starts with a clean state. Second, when running Containers together in a Pod it is often necessary to share files between those Containers. The Kubernetes Volume abstraction solves both of these problems.
+
 ### How to deploy a new image version for a deployment
 
 ![three possibilities to update an image of a deployment](2020-03-16-17-31-04.png)
