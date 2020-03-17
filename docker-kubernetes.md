@@ -148,6 +148,11 @@ Build an image from a dockerfile and tag. Tag is version
 Change a running container and create a new image. -c applies a change to a running container.
 > docker commit - c 'CMD ["redis-server"]' \<container id\>
 
+### Image repository
+
+Push image into repository
+> docker push \<image name\>
+
 ### Create to kill containers
 
 Start image with default start command
@@ -573,6 +578,13 @@ Difference between Pods and Deployment
 
 ![Deployment pod template](img/2020-03-16-16-10-03.png)
 
+##### How to deploy a new image version for a deployment
+
+![three possibilities to update an image of a deployment](2020-03-16-17-31-04.png)
+
+> docker build -t alexsnyx/multi-client:v6 .
+> docker push alexsnyx/multi-client:v6
+
 ### kubectl
 
 Cheatsheet see here: <https://kubernetes.io/de/docs/reference/kubectl/cheatsheet/>
@@ -604,6 +616,11 @@ Get current deployments
 
 Get detailed info about an object
 > kubectl describe \<objecttype\> \<objectname\>
+
+Imperative command to update image
+> kubectl set image \<object tye\> / \<object name\>  \<container name\> = \<new image to use\>
+Exapmple:
+>kubectl set image deployment/client-deployment client=alexsnyx/multi-client:v6
 
 ### minikube
 
@@ -643,7 +660,7 @@ Maybe an useful link.
 ### Pod Design 20%
 
 ### Services & Networking 13%
-
+p
 ### State Persistence 8%
 
 ## Linux Directory Structure
