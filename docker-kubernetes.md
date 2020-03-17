@@ -619,7 +619,9 @@ Change the configuration of your local cluster. You only can do updates to a pod
     - initContainer: image
     - spec.activeDeadlineSeconds
     - spec.tolerations
-> kubectl apply -f \<filename\>
+> kubectl apply -f \<filename\>\
+or\
+> kubectl apply -f \<folder\>
 
 Remove an object
 > kubectl delete -f \<filename\>
