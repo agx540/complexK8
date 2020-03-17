@@ -503,18 +503,24 @@ Kubernetes is a system to deploy containerized apps.
 kubectl: Use for managing containers in the node.
 minikube: User for managing the VM for lokal Kubernetes cluster.
 
-![](2020-03-15-14-56-07.png)
+![Kubernetes development vs production environment](img/2020-03-15-14-56-07.png)
 
 ### Transfer Knowledge from docker-compose to Kubernetes
 
-![](img/2020-03-15-15-52-46.png)
+![Docker-Compose.yaml](img/2020-03-15-15-52-46.png)
 
 - Kubernetes needs startup ready images
 - We need to do a networking manuall
 
-![](img/2020-03-15-15-54-08.png)
+![Docker Compose vs Kubernetes](img/2020-03-15-15-54-08.png)
 
-#### Configuration
+### Kubernetes Big Picture
+
+![kubernetes big picture](img/2020-03-16-14-33-44.png)
+
+![Kubernetes big picture description](img/2020-03-16-14-34-42.png)
+
+### Configuration
 
 A configuration is the desired state Kubernetes needs to reach.
 
@@ -562,9 +568,6 @@ A selector is used to reference a key value pair in the labels section of config
 - targetPort: send all incoming traffic to the pod.dir
 - nodePort: is the port which is used to call the cluster and get forwarded to the pod.
 
-![kubernetes big picture](img/2020-03-16-14-33-44.png)
-
-![Kubernetes big picture description](img/2020-03-16-14-34-42.png)
 
 ![Imperative and declarative configuration approach](img/2020-03-16-15-41-26.png)
 
@@ -578,12 +581,13 @@ Difference between Pods and Deployment
 
 ![Deployment pod template](img/2020-03-16-16-10-03.png)
 
-##### How to deploy a new image version for a deployment
+### How to deploy a new image version for a deployment
 
 ![three possibilities to update an image of a deployment](2020-03-16-17-31-04.png)
 
 > docker build -t alexsnyx/multi-client:v6 .
 > docker push alexsnyx/multi-client:v6
+> kubectl set image deployment/client-deployment client=alexsnyx/multi-client:v6
 
 ### kubectl
 
@@ -622,6 +626,9 @@ Imperative command to update image
 Exapmple:
 >kubectl set image deployment/client-deployment client=alexsnyx/multi-client:v6
 
+Get logs from a pod
+> kubectl logs \<pod name\>
+
 ### minikube
 
 Start minikube
@@ -633,35 +640,39 @@ Get minikube ip (run powershell in admin mode)
 Open dashboard
 > minikube dashboard
 
-#### ------------------------------------------
+Get docker information running inside minikube
+> minikube docker-env
 
-#### -------------------------------------------
+Change docker client to connect to docker in minikube
+> & minikube -p minikube docker-env | Invoke-Expression
 
-#### --------------------------------------------
+### How to connect to Docker in minikube
 
-#### ---------------------------------------------
+run & minikube -p minikube docker-env | Invoke-Expression
 
-#### ----------------------------------------------
+### Setup complex environment locally
 
-## Certified Kubernetes Application Developer (CKAD)
+
+
+### Certified Kubernetes Application Developer (CKAD)
 
 Maybe an useful link.
 
 <https://medium.com/bb-tutorials-and-thoughts/practice-enough-with-these-questions-for-the-ckad-exam-2f42d1228552>
 
-### Core concepts 13%
+#### Core concepts 13%
 
-### Configuration 18%
+#### Configuration 18%
 
-### Multi-Container Pods 10%
+#### Multi-Container Pods 10%
 
-### Observability 18%
+#### Observability 18%
 
-### Pod Design 20%
+#### Pod Design 20%
 
-### Services & Networking 13%
-p
-### State Persistence 8%
+#### Services & Networking 13%
+
+#### State Persistence 8%
 
 ## Linux Directory Structure
 
