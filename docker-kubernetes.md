@@ -641,6 +641,11 @@ Is an advertisement of storage options.
 
 #### Secret
 
+Kubernetes Secrets let you store and manage sensitive information, such as passwords, OAuth tokens, and ssh keys. Storing confidential information in a Secret is safer and more flexible than putting it verbatim in a Pod definition or in a container image. See Secrets design document for more information.
+
+Create a secret from command line
+> kubectl create secret generic \<secret name\> -from-literal \<key\>=\<value\>
+
 ### How to deploy a new image version for a deployment
 
 ![three possibilities to update an image of a deployment](2020-03-16-17-31-04.png)
@@ -702,6 +707,9 @@ List storage provisioner current configured in Kubernetes instance.
 
 Gives more information about storage provisioner current configured in Kubernetes instance.
 > kubectl describe storageclass
+
+Create a secret from command line
+> kubectl create secret generic \<secret name\> -from-literal \<key\>=\<value\>
 
 ### minikube
 
