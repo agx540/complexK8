@@ -691,6 +691,18 @@ Exapmple:
 Get logs from a pod
 > kubectl logs \<pod name\>
 
+List actual used persistent volumes
+> kubectl get pv
+
+List volumes claims
+> kubectl get pvc
+
+List storage provisioner current configured in Kubernetes instance.
+> kubectl get storageclass
+
+Gives more information about storage provisioner current configured in Kubernetes instance.
+> kubectl describe storageclass
+
 ### minikube
 
 Start minikube
@@ -702,17 +714,17 @@ Get minikube ip (run powershell in admin mode)
 Open dashboard
 > minikube dashboard
 
+Get a console to minikube
+> minikube ssh
+
 Get docker information running inside minikube
 > minikube docker-env
 
 Change docker client to connect to docker in minikube
 > & minikube -p minikube docker-env | Invoke-Expression
 
-List storage provisioner current configured in Kubernetes instance.
-> kubectl get storageclass
-
-Gives more information about storage provisioner current configured in Kubernetes instance.
-> kubectl describe storageclass
+Get minikube logs
+> minikube logs
 
 ### How to connect to Docker in minikube
 

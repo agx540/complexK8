@@ -1,10 +1,11 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: database-persistent-colume-claim
+  name: task-pv-claim
 spec:
+  storageClassName: manual
   accessModes:
-    - ReadWriteOnce #only one pod can access the volume at one time
+    - ReadWriteOnce
   resources:
     requests:
-      storage: 2Gi
+      storage: 1Gi
