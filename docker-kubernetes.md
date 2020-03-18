@@ -520,6 +520,10 @@ minikube: User for managing the VM for lokal Kubernetes cluster.
 
 ![Kubernetes big picture description](img/2020-03-16-14-34-42.png)
 
+### Controller
+
+A controller is an element which transforms the current state of the system to the desired state which is configured.
+
 ### Configuration
 
 A configuration is the desired state Kubernetes needs to reach.
@@ -578,7 +582,7 @@ Kubernetes supports declarative and imperative approach
 
 Exposes the Service on a cluster-internal IP. Choosing this value makes the Service only reachable from within the cluster. This is the default ServiceType.
 
-##### LoadBalancer
+##### LoadBalancer (deprecated)
 
 Exposes the Service externally using a cloud provider’s load balancer. NodePort and ClusterIP Services, to which the external load balancer routes, are automatically created.
 
@@ -589,6 +593,16 @@ Maps the Service to the contents of the externalName field (e.g. foo.bar.example
 ##### Ingress
 
 An API object that manages external access to the services in a cluster, typically HTTP. Ingress may provide load balancing, SSL termination and name-based virtual hosting.
+
+![different nginx ingress projects](img/2020-03-18-14-59-11.png)
+
+![ingress-nginx depends on environment where it's hosted](img/2020-03-18-15-01-12.png)
+
+We use in the course: <https://github.com/kubernetes/ingress-nginx>
+
+![Ingress Controller](img/2020-03-18-15-12-44.png)
+
+![Ingress Controller and thing that routes traffic](img/2020-03-18-15-14-31.png)
 
 #### Deployment
 
@@ -648,11 +662,15 @@ Create a secret from command line
 
 ### How to deploy a new image version for a deployment
 
-![three possibilities to update an image of a deployment](2020-03-16-17-31-04.png)
+![three possibilities to update an image of a deployment](img/2020-03-16-17-31-04.png)
 
 > docker build -t alexsnyx/multi-client:v6 .
 > docker push alexsnyx/multi-client:v6
 > kubectl set image deployment/client-deployment client=alexsnyx/multi-client:v6
+
+### How to deploy complex example to Google Cloud
+
+![google cloud complex system overview](img/2020-03-18-15-17-01.png)
 
 ### kubectl
 
