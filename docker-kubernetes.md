@@ -602,6 +602,45 @@ Difference between Pods and Deployment
 
 On-disk files in a Container are ephemeral, which presents some problems for non-trivial applications when running in Containers. First, when a Container crashes, kubelet will restart it, but the files will be lost - the Container starts with a clean state. Second, when running Containers together in a Pod it is often necessary to share files between those Containers. The Kubernetes Volume abstraction solves both of these problems.
 
+![volume differences Docker and Kubernetes Volume object](img/2020-03-18-09-50-06.png)
+
+![volume differences Docker and Kubernetes Volume object](img/2020-03-18-09-56-06.png)
+
+There a lot of adapters to third party storage systems like:
+
+- azureDisk
+- azureFile
+- awsElasticBlockStore
+- iscsi
+- nfs
+- fc (fibre channel)
+- ...
+
+##### Persistent Volume
+
+A persistent volume lives outside a pod and stays there. A Kubernetes Volume lives in a
+pod and dies with a pod and all data is gone.
+
+##### StorageClass
+
+A StorageClass provides a way for administrators to describe the “classes” of storage they offer. Different classes might map to quality-of-service levels, or to backup policies, or to arbitrary policies determined by the cluster administrators. Kubernetes itself is unopinionated about what classes represent. This concept is sometimes called “profiles” in other storage systems.
+
+List storage provisioner current configured in Kubernetes instance.
+> kubectl get storageclass
+
+Gives more information about storage provisioner current configured in Kubernetes instance.
+> kubectl describe storageclass
+
+###### Access Modes
+
+![persistent volumes access modes](img/2020-03-18-10-12-11.png)
+
+##### Persistent Volume Claim PVC
+
+Is an advertisement of storage options.
+
+#### Secret
+
 ### How to deploy a new image version for a deployment
 
 ![three possibilities to update an image of a deployment](2020-03-16-17-31-04.png)
@@ -668,6 +707,12 @@ Get docker information running inside minikube
 
 Change docker client to connect to docker in minikube
 > & minikube -p minikube docker-env | Invoke-Expression
+
+List storage provisioner current configured in Kubernetes instance.
+> kubectl get storageclass
+
+Gives more information about storage provisioner current configured in Kubernetes instance.
+> kubectl describe storageclass
 
 ### How to connect to Docker in minikube
 
