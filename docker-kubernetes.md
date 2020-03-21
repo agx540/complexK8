@@ -89,7 +89,7 @@ Runs start command of container.
 
 ### How you can communicate with a running processs in a container
 
-![docker container system overview](2020-02-28-16-10-19.png)
+![docker container system overview](img/2020-02-28-16-10-19.png)
 
 use -it on command allows you to connect to STDIN on running processes in a container and pretty up output.
 
@@ -519,6 +519,8 @@ minikube: User for managing the VM for lokal Kubernetes cluster.
 ![kubernetes big picture](img/2020-03-16-14-33-44.png)
 
 ![Kubernetes big picture description](img/2020-03-16-14-34-42.png)
+
+![Kubernetes Architecture](img/2020-03-21-16-25-03.png)
 
 ### Controller
 
