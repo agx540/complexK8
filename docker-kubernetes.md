@@ -525,6 +525,7 @@ minikube: User for managing the VM for lokal Kubernetes cluster.
 ### Controller
 
 A controller is an element which transforms the current state of the system to the desired state which is configured.
+It tries to creates objects from configuration.
 
 ### Configuration
 
@@ -605,6 +606,19 @@ We use in the course: <https://github.com/kubernetes/ingress-nginx>
 ![Ingress Controller](img/2020-03-18-15-12-44.png)
 
 ![Ingress Controller and thing that routes traffic](img/2020-03-18-15-14-31.png)
+
+Additional reading on Ingress Nginx
+<https://www.joyfulbikeshedding.com/blog/2018-03-26-studying-the-kubernetes-ingress-system.html>
+
+###### Ingress-Nginx on Google Cloud
+
+![Ingress-Nginx on Google Cloud](img/2020-04-01-11-18-15.png)
+
+- When you setup a ngnix-controller you get default-backend pod.
+
+###### How to setup Ingress-Nginx
+
+<https://kubernetes.github.io/ingress-nginx/deploy/>
 
 #### Deployment
 
