@@ -803,7 +803,37 @@ git push -u origin master
 
 #### Tell travis Ci to watch for code changes
 
+- Refresh git repos
+- create trigger to watch repo
 
+#### Create Google Cloud objects
+
+Goto google cloud console: <https://console.cloud.google.com/>
+
+1. Create a new project named complexK8
+2. Wait until the project is created and select it.
+3. Enable billing for this project if it's not done already
+4. Create a new Kubernetes Cluster
+    1. Select the location of the cluster
+    2. Create a 3 node cluster with standard machine configuration
+
+#### Add deployment script tell Travis to deploy to Google Cloud
+
+![Travis workflow to deploy to Google Cloud](img/2020-04-01-14-58-09.png)
+
+This is more an overview. There are some steps missing.
+
+#### Create a Google Cloud service account
+
+![create a Google Cloud service account](img/2020-04-01-15-30-30.png)
+
+
+- docker run -it -v ${pwd}:/app ruby:2.3 sh
+- gem install travis --no-rdoc --no-ri
+- gem install travis
+- travis login
+- Copy json file into the 'volumed' directory so we can use it in the container
+- travis encrypt-file service-account.json -r agx540/complexK8
 
 ### Certified Kubernetes Application Developer (CKAD)
 
@@ -921,6 +951,9 @@ List current running processes (ps = process status)
 
 Create a new file
 > touch \<filename\>
+
+See current directory
+> pwd
 
 ## Node.js sample project
 
