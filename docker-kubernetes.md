@@ -23,6 +23,12 @@ Chapter 9:\
 
 - Capital 3 - Video 35
 
+## Problems with course
+
+### postgres volume mount fail
+
+I'm not able to mount volume to postgres container to store database.
+
 ## Dive into Docker
 
 ### Why Docker
