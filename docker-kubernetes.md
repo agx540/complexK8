@@ -498,6 +498,8 @@ AWS_SECRET_KEY
 
 and use values from AWS user above.
 
+
+
 ## Kuberenetes
 
 Kubernetes is a system to deploy containerized apps.
@@ -781,6 +783,27 @@ run & minikube -p minikube docker-env | Invoke-Expression
 ### Setup complex environment locally
 
 ![complex setup architecture](img/2020-03-17-13-58-02.png)
+
+### Production Deployment to Google Cloud
+
+![production deployment workflow](img/2020-04-01-13-46-30.png)
+
+#### Create Github repo
+
+…or create a new repository on the command line
+git init
+git add .
+git commit -m "first commit"
+git remote add origin \<github repo uri\>
+git push -u origin master
+
+…or push an existing repository from the command line
+git remote add origin \<github repo uri\>
+git push -u origin master
+
+#### Tell travis Ci to watch for code changes
+
+
 
 ### Certified Kubernetes Application Developer (CKAD)
 

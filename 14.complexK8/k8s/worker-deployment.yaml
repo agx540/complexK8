@@ -1,6 +1,6 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata: 
+metadata:
   name: worker-deployment
 spec:
   replicas: 1
@@ -13,9 +13,9 @@ spec:
         component: worker
     spec:
       containers:
-        - name:  worker
-          image:  alexsnyx/multi-worker
-          env: 
+        - name: worker
+          image: alexsnyx/multi-worker
+          env:
             - name: REDIS_HOST
               value: redis-cluster-ip-service
             - name: REDIS_PORT
