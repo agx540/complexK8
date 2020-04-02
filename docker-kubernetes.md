@@ -735,6 +735,9 @@ Imperative command to update image
 Exapmple:
 >kubectl set image deployment/client-deployment client=alexsnyx/multi-client:v6
 
+List namespaces
+> kubectl get namespaces
+
 Get logs from a pod
 > kubectl logs \<pod name\>
 
@@ -827,13 +830,86 @@ This is more an overview. There are some steps missing.
 
 ![create a Google Cloud service account](img/2020-04-01-15-30-30.png)
 
-
 - docker run -it -v ${pwd}:/app ruby:2.3 sh
 - gem install travis --no-rdoc --no-ri
 - gem install travis
 - travis login
 - Copy json file into the 'volumed' directory so we can use it in the container
 - travis encrypt-file service-account.json -r agx540/complexK8
+
+#### Create a image version based on git SHA
+
+![multitag docker images with git sha](img/2020-04-02-09-13-22.png)
+
+#### Create secrets at google cloud kubernetes
+
+> gcloud config set project complexk8
+> gcloud config set compute/zone europe-west1-b
+> gcloud container clusters get-credentials mult-cluster
+> kubectl create secret generic pgpassword --from-literal PGPASSWORD=mypgpassword123
+
+#### Using Helm
+
+Helm helps you manage Kubernetes applications — Helm Charts help you define, install, and upgrade even the most complex Kubernetes application.
+
+Charts are easy to create, version, share, and publish — so start using Helm and stop the copy-and-paste.
+
+For more information see <https://github.com/helm/helm>
+
+![helm and tiller](img/2020-04-02-09-45-52.png)
+
+##### Install helm FROM SCRIPT
+
+> curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts/get-helm-3\
+> chmod 700 get_helm.sh\
+> ./get_helm.sh
+
+##### RBAC Role Based Access Control is activated by default in GKE (Google Kubernestes Engine)
+
+![role based access control (rbac) control ](img/2020-04-02-09-55-38.png)
+
+![rbac objects](2020-04-02-09-58-33.png)
+
+kube-system namespace is more a administration namespace.
+
+***How to allow tiller to change our cluster***
+
+1. Create a Service Account
+2. Create a ClusterRoleBinding
+3. Tie the ClusterRoleBinding to the Service Account
+4. Assign the Service Account to the tiller pod
+
+> helm repo add stable https://kubernetes-charts.storage.googleapis.com/
+> helm install my-nginx stable/nginx-ingress --set rbac.create=true
+
+![created nginx objects](img/2020-04-02-10-45-14.png)
+
+Ingress-controller reads config file and setup nginx.
+Default-Backend is a default backend with health check in it.
+
+![loadbalancer ip address](img/2020-04-02-10-48-02.png)
+
+http://35.195.226.53/ is the ip to the default backend.
+
+![google cloud load balancer which is created by ingress](img/2020-04-02-10-51-09.png)
+
+Here you see google cloud load balancer.
+
+### -
+
+### --
+
+### ---
+
+### ----
+
+### -----
+
+### ------
+
+### -------
+
+### --------
 
 ### Certified Kubernetes Application Developer (CKAD)
 
